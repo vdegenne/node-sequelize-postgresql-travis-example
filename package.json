@@ -1,9 +1,9 @@
 {
   "name": "travis-postgresql-example",
   "version": "1.0.0",
-  "description": "description",
+  "description": "This is an example of how to set a travis environment for testing apps using postgresql, express, and sequelize.",
   "author": "Valentin Degenne <vdegenne@gmail.com>",
-  "main": "lib/travis-postgresql-test",
+  "main": "lib/travis-postgresql-example",
   "license": "MIT",
   "scripts": {
     "clean": "rimraf lib",
@@ -35,5 +35,5 @@
     "pg": "^7.4.1",
     "sequelize": "^4.37.6"
   },
-  "typings": "lib/travis-postgresql-test.d.ts"
+  "typings": "lib/travis-postgresql-example.d.ts"
 }

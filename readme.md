@@ -1,5 +1,2 @@
 # travis-postgresql-example
 
-
-
-
