@@ -5,3 +5,7 @@ services:
   - postgresql
 addons:
   postgresql: "9.5"
+before_script:
+  - psql -U postgres -a -f sql/test_install.sql
+after_script:
+  - psql -U postgres -a -f sql/test_uninstall.sql
