@@ -3,6 +3,7 @@ import {getSequelize} from '../start-sequelize';
 
 const assert = chai.assert;
 
+
 describe('Sequelize', () => {
   it('gives us a decent connection', (done) => {
     getSequelize()
