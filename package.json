@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "rimraf lib",
     "build": "yarn clean && tsc",
-    "test": "NODE_ENV=test yarn build && mocha",
+    "test": "yarn build && NODE_ENV=test mocha",
     "test:watch": "NODE_ENV=test tsc-then -- mocha",
     "format": "find src test -iname '*.ts' | xargs clang-format --style=file -i"
   },
