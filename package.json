@@ -6,6 +6,7 @@
   "main": "lib/travis-postgresql-example",
   "license": "MIT",
   "scripts": {
+    "install:database": "psql -U postgres -a -f sql/test_install.sql",
     "clean": "rimraf lib",
     "build": "yarn clean && tsc",
     "test": "yarn build && NODE_ENV=test mocha",

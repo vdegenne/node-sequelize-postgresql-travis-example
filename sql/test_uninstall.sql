@@ -1,2 +1,2 @@
-drop database if exists testdb;
+drop database if exists universe;
 drop user if exists testdbuser;
