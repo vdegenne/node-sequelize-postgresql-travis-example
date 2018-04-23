@@ -17,19 +17,13 @@ if (process.env.NODE_ENV && process.env.NODE_ENV === 'test') {
 }
 
 
-let sequelize: Sequelize.Sequelize;
 
-// This gives us a singleton object representing our connection with our
-// database
-export async function getSequelize(): Promise<Sequelize.Sequelize> {
-  if (!sequelize) {
-    sequelize = new Sequelize(Object.assign(dbConfig, {
-      dialect: 'postgresql',
-      logging: false,
-      operatorsAliases: false,
-      define: {timestamps: false}
-    }));
-  }
+const _database = new Sequelize(Object.assign(dbConfig, {
+  dialect: 'postgresql',
+  logging: false,
+  operatorsAliases: false,
+  define: {timestamps: false}
+}));
 
-  return sequelize;
-}
+
+export default _database;

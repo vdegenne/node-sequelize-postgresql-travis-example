@@ -12,7 +12,7 @@ create table atoms (
 );
 
 create table elements (
-  element_id serial primary key,
+  id serial primary key,
   name text not null
 );
 

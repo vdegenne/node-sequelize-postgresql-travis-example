@@ -1,26 +1,23 @@
 import * as Sequelize from 'sequelize';
-import {getSequelize} from '../start-sequelize';
+import database from '../database';
 
-let atomModel: Sequelize.Model<{}, {}>;
 
+const _atoms = database.define('atoms', {
+  atom_id: {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
+  name: {type: Sequelize.TEXT, allowNull: false},
+  symbol: {type: Sequelize.STRING(1), allowNull: false},
+  atomic_number: {type: Sequelize.INTEGER, allowNull: false},
+  atomic_mass: {type: Sequelize.NUMERIC, allowNull: false}
+});
 
 export interface Atom {
-  atom_id: Number, name: string, symbol: CharacterData, atomic_number: Number,
-      atomic_mass: Float32Array
+  atom_id: number;
+  name: string;
+  symbol: string;
+  atomic_number: number;
+  atomic_mass: number;
+
+  update(values: any): Promise<Atom>;
 }
 
-export async function getAtomModel(): Promise<Sequelize.Model<{}, {}>> {
-  if (!atomModel) {
-    const connection = await getSequelize();
-
-    atomModel = connection.define('atoms', {
-      atom_id: {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
-      name: {type: Sequelize.TEXT, allowNull: false},
-      symbol: {type: Sequelize.STRING(1), allowNull: false},
-      atomic_number: {type: Sequelize.INTEGER, allowNull: false},
-      atomic_mass: {type: Sequelize.NUMERIC, allowNull: false}
-    });
-  }
-
-  return atomModel;
-}
+export default _atoms;

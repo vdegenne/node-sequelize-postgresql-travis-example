@@ -1,22 +1,19 @@
 import * as Sequelize from 'sequelize';
-import {getSequelize} from '../start-sequelize';
+import database from '../database';
 
-let elementModel: Sequelize.Model<{}, {}>;
+
+
+const _elements = database.define('elements', {
+  id: {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
+  name: {type: Sequelize.STRING, allowNull: false}
+});
+
 
 export interface Element {
-  element_id: Number, name: string, destroy(): Function
+  id: Number;
+  name: string;
+
+  destroy(): Promise<number>;
 }
 
-export async function getElementModel(): Promise<Sequelize.Model<{}, {}>> {
-  if (!elementModel) {
-    const connection = await getSequelize();
-
-    elementModel = connection.define('elements', {
-      element_id:
-          {type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true},
-      name: {type: Sequelize.STRING, allowNull: false}
-    });
-  }
-
-  return elementModel;
-}
+export default _elements;
