@@ -796,8 +796,9 @@ readable-stream@^2.0.5:
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
-"req-control@file:../req-control":
-  version "1.0.0"
+req-control@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/req-control/-/req-control-0.0.1.tgz#d0c2f01d1361461d1668371cc18443d636a6f6ed"
   dependencies:
     "@types/node" "^9.6.1"
 

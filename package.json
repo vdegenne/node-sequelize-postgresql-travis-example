@@ -38,7 +38,7 @@
     "@types/sequelize": "^4.27.14",
     "express": "^4.16.3",
     "pg": "^7.4.1",
-    "req-control": "file:../req-control/.",
+    "req-control": "^0.0.1",
     "sequelize": "^4.37.6"
   },
   "typings": "lib/travis-postgresql-example.d.ts"
